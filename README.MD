@@ -2,19 +2,20 @@
 
 ## Qu'est-ce que c'est?
 
-Architecture du projet pour l'évaluation de C++, niveau B3, autour des templates collections de la STL.
+Architecture du projet pour l'ï¿½valuation de C++, niveau B3, autour des templates collections de la STL.
 
-**ATTENTION!!! Pensez bien à modifier le dépôt en ligne pour pointer vers le votre!!**
+**ATTENTION!!! Pensez bien ï¿½ modifier le dï¿½pï¿½t en ligne pour pointer vers le votre!!**
 
 ## Modification de origin dans Visual Studio
 
-Dans le menu, allez dans `Git` / `Géreer les dépôts distant...`
+Dans le menu, allez dans `Git` / `Gï¿½reer les dï¿½pï¿½ts distant...`
 
-Dans la fenètre, modifiez `origin` pour mettre dans `Récupérer` l'url de **votre** dépôt Gitlab.
+Dans la fenï¿½tre, modifiez `origin` pour mettre dans `Rï¿½cupï¿½rer` l'url de **votre** dï¿½pï¿½t Gitlab.
 
 ## Vos messages de commits obligatoires
 
-Insèrez ci-dessous une cpoie des messages de commit obligatoires, en sautant 1 ligne entre chaque message... 
+Insï¿½rez ci-dessous une cpoie des messages de commit obligatoires, en sautant 1 ligne entre chaque message... 
 
-Pensez à utiliser également des messages clairs lors de vos propres commits! 
+Pensez ï¿½ utiliser ï¿½galement des messages clairs lors de vos propres commits! 
 
+TEST
