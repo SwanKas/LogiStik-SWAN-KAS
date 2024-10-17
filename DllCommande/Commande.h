@@ -1,41 +1,30 @@
-#pragma once
-#define DllExport   __declspec( dllexport )
-#define DllImport   __declspec( dllimport )
+#ifndef COMMANDE_H
+#define COMMANDE_H
 
-#include <ostream>
-#include <chrono>
+#include <string>
+#include <iostream>
+#include <ctime>
 
-using tp = std::chrono::system_clock::time_point;
-
- class DllExport Commande
-{
+class Commande {
 private:
-	unsigned int numero;
-	tp dateCreation;
-	tp datePreparation;
-	tp dateExpedition;
-	tp dateLivraison;
-	std::string contenu;
+    int numero;
+    std::string content;
+    std::time_t dateCreation;
+    std::time_t datePreparation;
+    std::time_t dateExpedition;
+    std::time_t dateLivraison;
 
 public:
-	Commande(const unsigned int numero, const std::string contenu);
-	void Preparer();
-	void Expedier();
-	void Livrer();
-	unsigned int GetNumero() const { return this->numero; }
-	unsigned int GetNumero() { return this->numero; }
-	tp GetDateCreation() const { return this->dateCreation; }
-	tp GetDateCreation() { return this->dateCreation; }
-	tp GetDatePreparation() const { return this->datePreparation; }
-	tp GetDatePreparation() { return this->datePreparation; }
-	tp GetDateExpedition() const { return this->dateExpedition; }
-	tp GetDateExpedition() { return this->dateExpedition; }
-	tp GetDateLivraison() const { return this->dateLivraison; }
-	tp GetDateLivraison() { return this->dateLivraison; }
-	std::string GetContenu() const { return this->contenu; }
-	std::string GetContenu() { return this->contenu; }
-	tm GetDateTm(const tp& date) const;
+    Commande(int num, const std::string& contenu);
+    void Preparer();
+    void Expedier();
+    void Livrer();
+    friend std::ostream& operator<<(std::ostream& os, const Commande& cmd);
+    int getNumero() const;
+    std::time_t getDateCreation() const;
+    std::time_t getDatePreparation() const;
+    std::time_t getDateExpedition() const;
+    std::time_t getDateLivraison() const;
 };
 
-DllExport std::ostream& operator <<(std::ostream& os, const Commande& source);
-
+#endif
