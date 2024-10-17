@@ -18,4 +18,18 @@ Ins�rez ci-dessous une cpoie des messages de commit obligatoires, en sautant 1
 
 Pensez � utiliser �galement des messages clairs lors de vos propres commits! 
 
-TEST
+
+
+REPONSE QUESTIONNAIRE:
+
+createdCommands
+Une liste chaînée (std::list) est utilisée pour ajouter et retirer rapidement les commandes en FIFO.
+
+preparedCommands
+Même logique avec une liste chaînée pour préparer les commandes dans l'ordre FIFO.
+
+truck_A et truck_B
+Une pile (std::stack) est idéale pour le chargement des camions, suivant une logique LIFO.
+
+delivredCommands
+Une table de hachage (std::unordered_map) permet un accès rapide aux commandes livrées par numéro.
