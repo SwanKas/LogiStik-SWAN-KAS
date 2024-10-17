@@ -1,28 +1,35 @@
-#include "Menu.h"
+#include "Application.h"
 #include <iostream>
 
-void Menu::afficherMenu() {
-    int choix;
-    std::string contenu;
+Application::Application() : nextNumero(1) {}
 
-    do {
-        std::cout << "1. Créer une commande" << std::endl;
-        std::cout << "2. Quitter" << std::endl;
-        std::cout << "Choisissez une option : ";
-        std::cin >> choix;
+void Application::creerCommande(const std::string& contenu) {
+    Commande cmd(nextNumero++, contenu);
+    createdCommands.push_back(cmd);
+    std::cout << "Commande créée : " << cmd << std::endl;
+}
 
-        switch (choix) {
-        case 1:
-            std::cout << "Contenu de la commande : ";
-            std::cin >> contenu;
-            app.creerCommande(contenu);
-            break;
-        case 2:
-            std::cout << "Au revoir!" << std::endl;
-            break;
-        default:
-            std::cout << "Choix invalide!" << std::endl;
+void Application::preparerCommande() {
+    if (!createdCommands.empty()) {
+        Commande& cmd = createdCommands.front();
+        cmd.Preparer();
+        preparedCommands.push_back(cmd);
+        createdCommands.pop_front();
+    }
+}
+
+void Application::afficherCollection(const std::string& collectionName) {
+    if (collectionName == "createdCommands") {
+        for (const auto& cmd : createdCommands) {
+            std::cout << cmd << std::endl;
         }
-
-    } while (choix != 2);
+    }
+    else if (collectionName == "preparedCommands") {
+        for (const auto& cmd : preparedCommands) {
+            std::cout << cmd << std::endl;
+        }
+    }
+    else {
+        std::cout << "Collection inconnue." << std::endl;
+    }
 }

@@ -7,12 +7,15 @@
 
 class Application {
 private:
-    std::list<Commande> createdCommands; 
+    std::list<Commande> createdCommands;
+    std::list<Commande> preparedCommands;
     int nextNumero;
 
 public:
     Application();
     void creerCommande(const std::string& contenu);
+    void preparerCommande();
+    void afficherCollection(const std::string& collectionName);
 };
 
 #endif

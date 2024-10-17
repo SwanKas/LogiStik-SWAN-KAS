@@ -1,7 +1,7 @@
 #include "Menu.h"
 
 int main() {
-    Menu menu; // Instanciation du menu
-    menu.afficherMenu(); // Affichage du menu
+    Menu menu;
+    menu.afficherMenu();
     return 0;
 }
